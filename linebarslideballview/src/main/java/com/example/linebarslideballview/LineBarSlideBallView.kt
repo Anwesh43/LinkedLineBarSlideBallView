@@ -215,4 +215,13 @@ class LineBarSlideBallView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : LineBarSlideBallView {
+            val view : LineBarSlideBallView = LineBarSlideBallView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
