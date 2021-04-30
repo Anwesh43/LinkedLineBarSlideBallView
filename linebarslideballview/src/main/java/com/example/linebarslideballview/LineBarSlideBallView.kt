@@ -10,11 +10,11 @@ import android.content.Context
 import android.app.Activity
 
 val colors : Array<Int> = arrayOf(
-    "",
-    "",
-    "",
-    "",
-    ""
+    "#f44336",
+    "#9C27B0",
+    "#BF360C",
+    "#00C853",
+    "#1A237E"
 ).map {
     Color.parseColor(it)
 }.toTypedArray()
@@ -49,7 +49,7 @@ fun Canvas.drawLineBarSlideBall(scale : Float, w : Float, h : Float, paint : Pai
         restore()
     }
     save()
-    translate(0f, -h + (h - size -  2* r) * sf4)
+    translate(0f, -h + (h - size - r) * sf4)
     drawArc(RectF(-r, 0f, r, 2 * r), 0f, 360f * sf3, true, paint)
     restore()
     restore()
