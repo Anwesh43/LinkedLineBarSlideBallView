@@ -190,4 +190,27 @@ class LineBarSlideBallView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : LineBarSlideBallView) {
+
+        private val lbsb : LineBarSlideBall = LineBarSlideBall(0)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+        private val animator : Animator = Animator(view)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            lbsb.draw(canvas, paint)
+            animator.animate {
+                lbsb.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            lbsb.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
