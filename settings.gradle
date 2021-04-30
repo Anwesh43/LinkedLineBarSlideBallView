@@ -1,0 +1,3 @@
+include ':linebarslideballview'
+include ':app'
+rootProject.name = "LinkedLineBarSlideBallView"
